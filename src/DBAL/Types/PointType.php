@@ -55,7 +55,7 @@ class PointType extends Type
             $data = sscanf($value, "(%f,%f)");
         }
 
-        return new Point($data[0], $data[1]);
+        return new Point($data[1], $data[0]);
     }
 
     /**
@@ -78,7 +78,7 @@ class PointType extends Type
             $format = "(%F, %F)";
         }
 
-        return sprintf($format, $value->getLatitude(), $value->getLongitude());
+        return sprintf($format, $value->getLongitude(), $value->getLatitude());
     }
 
     /**

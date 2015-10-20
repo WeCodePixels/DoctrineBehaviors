@@ -34,7 +34,7 @@ class Point
         if (isset($array['latitude'])) {
             return new self($array['latitude'], $array['longitude']);
         } else {
-            return new self($array[0], $array[1]);
+            return new self($array[1], $array[0]);
         }
     }
 
@@ -77,7 +77,7 @@ class Point
      */
     public function __toString()
     {
-        return sprintf('(%F,%F)', $this->latitude, $this->longitude);
+        return sprintf('(%F,%F)', $this->longitude, $this->latitude);
     }
 
     public function isEmpty()
